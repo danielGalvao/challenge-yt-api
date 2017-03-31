@@ -24,8 +24,7 @@ module.exports = {
       $: 'jquery',
       jQuery: 'jquery',
       'window.jQuery': 'jquery'
-    }),
-    new ExtractTextPlugin('app.css')
+    })
   ],
   module: {
     loaders: [{
@@ -37,8 +36,8 @@ module.exports = {
         plugins: ['transform-object-rest-spread']
       }
     },{
-      test:/\.css$/,
-      loader: ExtractTextPlugin.extract('style-loader', 'css-loader')
+      test:/\.scss$/,
+      loader: 'style-loader!css-loader!sass-loader'
     },{
       test: /\.woff|.woff2|.ttf|.eot|.svg|.png|.jpg*.*$/,
       loader: 'file'

@@ -1,0 +1,14 @@
+@import '/variables/colors';
+
+$header-height: 60px;
+
+.header {
+	height: $header-height;
+	width: 100%;
+	top: 0;
+	left: 0;
+	line-height: $header-height;
+	background-color: $bg-header-color;
+	text-align: left;
+  position: absolute;
+}
