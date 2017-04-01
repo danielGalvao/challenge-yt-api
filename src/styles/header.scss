@@ -1,14 +1,39 @@
 @import '/variables/colors';
-
-$header-height: 60px;
+@import '/variables/medias';
+@import '/variables/helpers';
 
 .header {
 	height: $header-height;
-	width: 100%;
+	width: 100vw;
 	top: 0;
 	left: 0;
 	line-height: $header-height;
 	background-color: $bg-header-color;
 	text-align: left;
-  position: absolute;
+	position: relative;
+	color: $main;
+
+	&__content {
+		width: $width-content;
+		margin: 0 auto;
+    height: 50px;
+    position: relative;
+
+		@media (max-width: $tablet) {
+			width: 100vw;
+		}
+	}
+
+	&__brand {
+		height: 50px;
+		max-width: 200px;
+		display: inline-block;
+	}
+
+	&__menu {
+		position: absolute;
+		right: 10px;
+		line-height: 50px;
+		font-size: 1.5em;
+	}
 }
