@@ -16,7 +16,7 @@
 	&__content {
 		width: $width-content;
 		margin: 0 auto;
-    height: 50px;
+    height: $header-height;
     position: relative;
 
 		@media (max-width: $tablet) {
@@ -25,15 +25,26 @@
 	}
 
 	&__brand {
-		height: 50px;
-		max-width: 200px;
 		display: inline-block;
+		vertical-align: top;
+	}
+
+	&__logo {
+		display: inline-block;
+		line-height: $header-height;
+		vertical-align: middle;
 	}
 
 	&__menu {
 		position: absolute;
 		right: 10px;
-		line-height: 50px;
-		font-size: 1.5em;
+		line-height: $header-height;
+
+		&-icon {
+			font-size: 1.1em;
+			position: relative;
+			top: 2px;
+			margin-left: 5px;
+		}
 	}
 }
