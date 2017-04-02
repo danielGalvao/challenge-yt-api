@@ -1,0 +1,11 @@
+@import '/variables/medias';
+
+.highlight {
+  width: 60%;
+  margin-right: 2em;
+
+  @media (max-width: $tablet) {
+    width: 100vw;
+    margin-right: 0;
+  }
+}

@@ -1,4 +1,4 @@
-import React, { Component, PropTypes } from 'react'
+import React, { Component } from 'react'
 // Local imports
 import headerStyle from '../styles/header.scss'
 import logoHeader from '../assets/images/logo.png'
