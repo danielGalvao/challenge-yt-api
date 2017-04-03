@@ -1,9 +1,21 @@
 @import '/variables/medias';
+@import '/variables/colors';
 
 .list {
   width: 40%;
 
   @media (max-width: $tablet) {
     width: 100vw;
+  }
+
+  &__title {
+    height: 6em;
+    line-height: 6em;
+
+    h1 {
+      font-weight: normal;
+      color: $bg-header-color ;
+      letter-spacing: 0.1em;
+    }
   }
 }
