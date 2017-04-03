@@ -18,4 +18,10 @@
       letter-spacing: 0.1em;
     }
   }
+
+  &__container {
+    border: 1px solid $border-color-wrap;
+    padding: 1em;
+    box-shadow: 0px 3px 3px $border-color-wrap;
+  }
 }
