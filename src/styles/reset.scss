@@ -1,4 +1,5 @@
-@import '/variables/fonts.scss';
+@import '/variables/fonts';
+@import '/variables/colors';
 
 body, html {
 	padding: 0;
@@ -6,6 +7,7 @@ body, html {
 	background-color: #fff;
 	font-size: 16pt;
 	font-family: $default;
+	color: $grey-default;
 }
 p, span, i, h1, h2, h3, h4 {
 	margin: 0;
