@@ -5,7 +5,14 @@
   display: flex;
   height: 96px;
   margin: .7em;
+  opacity: .8;
   position: relative;
+  transition: opacity .2s ease-in-out;
+
+  &:hover {
+    opacity: 1;
+    transition: opacity .2s ease-in-out;
+  }
 
   &__image {
     background-color: #c8c8c8;
