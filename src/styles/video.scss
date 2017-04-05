@@ -1,0 +1,42 @@
+@import '/variables/colors';
+@import '/variables/medias';
+
+.video {
+  display: flex;
+  height: 96px;
+  margin: .7em;
+  position: relative;
+
+  &__image {
+    background-color: #c8c8c8;
+    height: 96px;
+    margin-right: 5px;
+    width: 170px;
+  }
+
+  &__title {
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    color: $bg-header-color;
+    display: -webkit-box;
+    font-size: 18px;
+    line-height: 22px;
+    max-height: 65px;
+    overflow: hidden;
+    width: 47%;
+  }
+
+  &__views {
+    bottom: 0;
+    font-size: 14px;
+    left: 175px;
+    position: absolute;
+
+    &-icon {
+      font-size: 22px;
+      margin-right: 5px;
+      position: relative;
+      top: 2px;
+    }
+  }
+}

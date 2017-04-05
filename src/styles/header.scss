@@ -3,21 +3,21 @@
 @import '/variables/helpers';
 
 .header {
+	background-color: $bg-header-color;
+	color: $main;
 	height: $header-height;
-	width: 100vw;
-	top: 0;
 	left: 0;
 	line-height: $header-height;
-	background-color: $bg-header-color;
-	text-align: left;
 	position: relative;
-	color: $main;
+	text-align: left;
+	top: 0;
+	width: 100vw;
 
 	&__content {
-		width: $width-content;
+		height: $header-height;
 		margin: 0 auto;
-    height: $header-height;
     position: relative;
+		width: $width-content;
 
 		@media (max-width: $tablet) {
 			width: 100vw;
@@ -36,9 +36,15 @@
 	}
 
 	&__menu {
+		font-size: 16px;
 		position: absolute;
 		right: 0;
-		font-size: 12pt;
+		transition: opacity .2s ease-in-out;
+
+		&:hover {
+			opacity: .5;
+			transition: opacity .2s ease-in-out;
+		}
 
 		&-icon {
 			font-size: 1.1em;
@@ -49,9 +55,15 @@
 	&__search {
 		position: absolute;
     right: 80px;
+		transition: opacity .2s ease-in-out;
+
+		&:hover {
+			opacity: .5;
+			transition: opacity .2s ease-in-out;
+		}
 
 		&-icon {
-			font-size: .9em;
+			font-size: 18px;
 		}
 	}
 }
