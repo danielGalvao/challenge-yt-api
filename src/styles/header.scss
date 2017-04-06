@@ -36,6 +36,8 @@
 	}
 
 	&__menu {
+		cursor: pointer;
+		display: inline-block;
 		font-size: 16px;
 		position: absolute;
 		right: 0;
@@ -44,6 +46,12 @@
 		&:hover {
 			opacity: .5;
 			transition: opacity .2s ease-in-out;
+
+			+ .menu {
+				display: block;
+				opacity: 1;
+				transition: opacity .2s ease-in-out;
+			}
 		}
 
 		&-icon {
