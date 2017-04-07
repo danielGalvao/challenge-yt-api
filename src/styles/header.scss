@@ -1,5 +1,6 @@
 @import '/variables/colors';
 @import '/variables/medias';
+@import '/variables/mixins';
 @import '/variables/helpers';
 
 .header {
@@ -36,21 +37,21 @@
 	}
 
 	&__menu {
+		@include transition(opacity);
 		cursor: pointer;
 		display: inline-block;
 		font-size: 16px;
 		position: absolute;
 		right: 0;
-		transition: opacity .2s ease-in-out;
 
 		&:hover {
+			@include transition(opacity);
 			opacity: .5;
-			transition: opacity .2s ease-in-out;
 
 			+ .menu {
+				@include transition(opacity);
 				display: block;
 				opacity: 1;
-				transition: opacity .2s ease-in-out;
 			}
 		}
 
@@ -63,17 +64,60 @@
 	}
 
 	&__search {
+		@include border-radius(5px);
+		@include transition(all);
+		background: $header-height;
+		border: 1px solid $header-height;
+		cursor: pointer;
 		position: absolute;
     right: 80px;
-		transition: opacity .2s ease-in-out;
+		display: inline-block;
+		top: 13px;
+		height: 30px;
+		width: 0;
 
 		&:hover {
+			@include transition(opacity);
 			opacity: .5;
-			transition: opacity .2s ease-in-out;
+		}
+
+		&-input {
+			background: $bg-header-color;
+			border: 0;
+			color: $main;
+			font-family: "Titillium Web", sans-serif;
+			font-size: 16px;
+			height: 16px;
+			outline: none;
+			position: absolute;
+			right: 30px;
+			top: 6px;
+			width: 0;
+		}
+
+		&.active {
+			@include transition(all);
+			background: $search-dark;
+			border: 1px solid $main;
+			opacity: 1;
+			width: 290px;
+
+			.header__search-input {
+				@include transition(width);
+				background:$search-dark;
+				width: 252px;
+			}
+
+			.header__search-icon {
+				top: 5px;
+			}
 		}
 
 		&-icon {
 			font-size: 18px;
+			position: absolute;
+			right: 10px;
+			top: 6px;
 		}
 	}
 }

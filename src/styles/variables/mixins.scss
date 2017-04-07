@@ -14,3 +14,18 @@
   -ms-flex: $grow-factor;
   flex: $grow-factor;
 }
+
+@mixin border-radius($radius) {
+  -webkit-border-radius: $radius;
+     -moz-border-radius: $radius;
+      -ms-border-radius: $radius;
+          border-radius: $radius;
+}
+
+@mixin transition($item) {
+  -webkit-transition: $item .2s ease-in-out;
+  -moz-transition: $item .2s ease-in-out;
+  -ms-transition: $item .2s ease-in-out;
+  -o-transition: $item .2s ease-in-out;
+  transition: $item .2s ease-in-out;
+}
