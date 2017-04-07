@@ -10,11 +10,37 @@
   opacity: 0;
   padding: 8px;
   position: absolute;
-  right: -16px;
+  right: -17px;
   top: 56px;
   transition: opacity .2s ease-in-out;
   width: 253px;
   z-index: 2;
+
+  &:after {
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-bottom: 10px solid $main;
+    content: '';
+    height: 0;
+    position: absolute;
+    right: 14px;
+    top: -9px;
+    width: 0;
+    z-index: 4;
+  }
+
+  &:before {
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-bottom: 10px solid $grey-default;
+    content: '';
+    height: 0;
+    position: absolute;
+    right: 14px;
+    top: -10px;
+    width: 0;
+    z-index: 4;
+  }
 
   &:hover {
     display: block;
@@ -35,6 +61,7 @@
 
     &-icon {
       color: $bg-header-color;
+      font-size: 22px;
       margin-right: 10px;
     }
   }
