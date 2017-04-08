@@ -37,12 +37,16 @@ export default class Header extends Component {
 					</div>
 					<ul className="menu">
 						<li className="menu__item">
-							<i className="menu__item-icon fa fa-star-o"></i>
-							Destaques
+							<a href='#/'>
+								<i className="menu__item-icon fa fa-star-o"></i>
+								Destaques
+							</a>
 						</li>
 						<li className="menu__item">
-							<i className="menu__item-icon fa fa-toggle-right"></i>
-							Vídeos
+							<a href='#/videos'>
+								<i className="menu__item-icon fa fa-toggle-right"></i>
+								Vídeos
+							</a>
 						</li>
 					</ul>
 				</div>

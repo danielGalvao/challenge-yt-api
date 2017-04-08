@@ -1,16 +1,12 @@
 import React from 'react'
 
+import Routes from './routes';
 import Header from '../components/Header'
-import VideoHighlight from '../components/VideoHighlight'
-import VideoList from '../components/VideoList'
-import baseCss from '../styles/base.scss'
+import VideoHighlight from '../components/Home'
 
 export default props => (
   <main>
     <Header />
-    <div className="container">
-      <VideoHighlight />
-      <VideoList />
-    </div>
+    <Routes />
   </main>
 )

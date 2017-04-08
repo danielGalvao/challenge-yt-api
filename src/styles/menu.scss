@@ -60,6 +60,16 @@
       background-color: $menu-hover;
     }
 
+    a {
+      display: block;
+      color: $grey-hover;
+
+      &:hover,
+      &:active {
+        color: $grey-hover;
+      }
+    }
+
     &-icon {
       color: $bg-header-color;
       font-size: 22px;
