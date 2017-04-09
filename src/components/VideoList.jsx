@@ -5,30 +5,40 @@ import VideoItem from './video/VideoItem'
 import listCss from '../styles/videoList.scss'
 
 
-const VideoList = (props) => {
+export default class VideoList extends Component {
+	constructor(props) {
+		super(props);
 
-	const videoItems = props.videos.map((video) => {
-		return (
-			<VideoItem
-				onVideoSelect={props.onVideoSelect}
+		this.state = { moreVideos: 10 };
+  }
+
+	handleMoreVideos(moreVideos) {
+		this.props.moreVideos(moreVideos);
+	}
+
+	render() {
+		const videos = this.props.videos.map((video) => {
+			return (
+				<VideoItem
+				videoSelect={this.props.videoSelect}
 				key={video.etag}
 				video={video}
-			/>
-		)
-	})
+				/>
+			)
+		})
 
-	return (
-		<div className="list">
-			<div className="list__title">
-				<h1>+ Vídeos</h1>
+		return (
+			<div className="list">
+				<div className="list__title">
+					<h1>+ Vídeos</h1>
+				</div>
+				<div className="list__container">
+					<ul>
+						{videos}
+					</ul>
+					<span onClick={event => this.handleMoreVideos(this.state.moreVideos)} className="list__more">carregar mais vídeos...</span>
+				</div>
 			</div>
-      <div className="list__container">
-        <ul>
-					{videoItems}
-        </ul>
-				<span className="list__more">carregar mais vídeos...</span>
-      </div>
-		</div>
-	)
+		)
+	}
 }
-export default VideoList

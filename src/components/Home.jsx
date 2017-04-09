@@ -13,19 +13,26 @@ export default class Home extends Component {
     this.state = {
       term: '',
       videos: [],
-      selectedVideo: null
+      selectedVideo: null,
+      totalVideos: 4,
     };
 
-    this.videoSearch(this.state.term)
+    this.videoSearch(this.state.term, this.state.totalVideos)
   }
 
-  videoSearch(term) {
-    YoutubeApi({term: term, maxResults: 4}, (videos) => {
+  videoSearch(term, totalVideos) {
+    YoutubeApi({term: term, maxResults: totalVideos}, (videos) => {
       this.setState({
         videos: videos,
         selectedVideo: videos[0]
       })
     })
+  }
+
+  loadVideos(moreVideos) {
+    var newTotal = Number(this.state.totalVideos) + Number(moreVideos);
+    this.setState({totalVideos: newTotal});
+    this.videoSearch(this.state.term, newTotal);
   }
 
   render() {
@@ -34,7 +41,8 @@ export default class Home extends Component {
         <VideoHighlight selectedVideo={this.state.selectedVideo} />
         <VideoList
           videos={this.state.videos}
-          onVideoSelect={selectedVideo => this.setState({selectedVideo})}
+          videoSelect={selectedVideo => this.setState({selectedVideo})}
+          moreVideos={moreVideos => this.loadVideos(moreVideos)}
         />
       </div>
     )

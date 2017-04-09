@@ -37,7 +37,7 @@ export default class VideoItem extends Component {
 	render() {
 
 		return (
-			<li className="video" onClick={() => this.props.onVideoSelect(this.props.video)}>
+			<li className="video" onClick={() => this.props.videoSelect(this.props.video)}>
 			<img src={this.props.video.snippet.thumbnails.medium.url} className="video__image" />
 			<p title={this.props.video.snippet.title} className="video__title">{this.props.video.snippet.title}</p>
 			<span className="video__views">
