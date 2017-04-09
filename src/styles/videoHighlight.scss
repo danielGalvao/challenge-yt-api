@@ -27,10 +27,13 @@
   }
 
   &__desc {
+    @include transition(height);
     border: 1px solid $grey-default;
     box-shadow: 0px 3px 3px $grey-default;
     cursor: default;
+    height: 115px;
     margin: 1.2em 0;
+    overflow: hidden;
     padding: .7em;
     position: relative;
 
@@ -42,18 +45,16 @@
     }
 
     &__text {
-      @include transition(max-height);
       font-size: 14px;
       padding: 0 .5em;
-      max-height: 77px;
-      line-height: 20px;
+      line-height: 22px;
       overflow: hidden;
     }
 
     &:after {
       @include linearGradient(rgba(255,255,255,0.1), $main);
       @include transition(height);
-      bottom: 1px;
+      bottom: 0;
       content: '';
       height: 80px;
       position: absolute;
@@ -62,15 +63,14 @@
     }
 
     &:hover {
+      @include transition(height);
+      height: auto;
+      min-height: 115px;
+      overflow: visible;
+
       &:after {
         @include transition(height);
         height: 0;
-      }
-
-      .highlight__desc__text {
-        @include transition(max-height);
-        max-height: none;
-        overflow: visible;
       }
     }
   }

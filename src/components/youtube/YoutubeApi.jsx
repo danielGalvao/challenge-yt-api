@@ -9,7 +9,8 @@ module.exports = function (opt, callback) {
     channelId: YT.CHANNEL_ID,
     q: opt.term,
     maxResults: YT.MAX_RESULTS,
-    type: 'video'
+    type: 'video',
+    order: 'date'
   }
 
   axios.get(YT.API_URL, { params: params })
@@ -22,7 +23,3 @@ module.exports = function (opt, callback) {
       console.error(error)
     });
 };
-
-/*
-YoutuveApi({term: term}, (videos) => {});
-*/

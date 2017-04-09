@@ -1,13 +1,11 @@
 import React, { PureComponent } from 'react'
 
-import loaderGif from '../../assets/images/loader.gif'
-
 export default class Loader extends PureComponent {
 	render() {
 		return (
 			<section className="loader">
 				<img
-					src={loaderGif}
+					src="http://www.tsf.pt/common/images/img_loader.gif"
 					className="loader__image"
 					alt="Carregando..."
 					title="Carregando..." />
