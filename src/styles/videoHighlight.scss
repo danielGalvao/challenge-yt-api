@@ -1,6 +1,7 @@
 @import '/variables/medias';
 @import '/variables/colors';
 @import '/variables/mixins';
+@import '/variables/fonts';
 
 .highlight {
   margin-right: 1.3em;
@@ -31,7 +32,7 @@
     border: 1px solid $grey-default;
     box-shadow: 0px 3px 3px $grey-default;
     cursor: default;
-    height: 115px;
+    height: 119px;
     margin: 1.2em 0;
     overflow: hidden;
     padding: .7em;
@@ -41,10 +42,15 @@
       display: block;
       color: $bg-header-color;
       font-size: 18px;
+      overflow: hidden;
       padding: .1em .5em .5em;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      width: 80%;
     }
 
     &__text {
+      font-family: $lato;
       font-size: 14px;
       padding: 0 .5em;
       line-height: 22px;
@@ -65,7 +71,7 @@
     &:hover {
       @include transition(height);
       height: auto;
-      min-height: 115px;
+      min-height: 119px;
       overflow: visible;
 
       &:after {

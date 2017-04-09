@@ -3,7 +3,6 @@ import React from 'react'
 import Loading from '../Loading'
 
 const VideoDetail = ({selectedVideo}) =>  {
-  console.log(selectedVideo)
   if (!selectedVideo) {
 		return (
       <div>
@@ -25,7 +24,7 @@ const VideoDetail = ({selectedVideo}) =>  {
         <iframe width="560" height="310" src={url} frameborder="0" allowfullscreen></iframe>
       </div>
       <div className="highlight__desc">
-        <span className="highlight__desc__title">{selectedVideo.snippet.title}</span>
+        <span title={selectedVideo.snippet.title} className="highlight__desc__title">{selectedVideo.snippet.title}</span>
         <p className="highlight__desc__text">{selectedVideo.snippet.description}</p>
       </div>
     </div>

@@ -2,6 +2,7 @@
 @import '/variables/medias';
 @import '/variables/mixins';
 @import '/variables/helpers';
+@import '/variables/fonts';
 
 .header {
 	background-color: $bg-header-color;
@@ -85,9 +86,10 @@
 			background: $bg-header-color;
 			border: 0;
 			color: $main;
-			font-family: "Titillium Web", sans-serif;
-			font-size: 16px;
+			font-family: $lato;
+			font-size: 14px;
 			height: 16px;
+			line-height: 16px;
 			outline: none;
 			position: absolute;
 			right: 30px;

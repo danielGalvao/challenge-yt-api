@@ -20,7 +20,7 @@ export default class Home extends Component {
   }
 
   videoSearch(term) {
-    YoutubeApi({term: term}, (videos) => {
+    YoutubeApi({term: term, maxResults: 4}, (videos) => {
       this.setState({
         videos: videos,
         selectedVideo: videos[0]
@@ -32,7 +32,10 @@ export default class Home extends Component {
 		return (
       <div className="container">
         <VideoHighlight selectedVideo={this.state.selectedVideo} />
-        <VideoList videos={ this.state.videos } />
+        <VideoList
+          videos={this.state.videos}
+          onVideoSelect={selectedVideo => this.setState({selectedVideo})}
+        />
       </div>
     )
   }

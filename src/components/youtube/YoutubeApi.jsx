@@ -8,7 +8,7 @@ module.exports = function (opt, callback) {
     key: YT.API_KEY,
     channelId: YT.CHANNEL_ID,
     q: opt.term,
-    maxResults: YT.MAX_RESULTS,
+    maxResults: opt.maxResults,
     type: 'video',
     order: 'date'
   }
