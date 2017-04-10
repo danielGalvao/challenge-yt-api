@@ -1,0 +1,40 @@
+@import 'videoList';
+@import '/variables/helpers';
+
+.container_allvideos {
+  margin: 0 auto;
+  width: $width-content;
+
+  &__title {
+    height: 4.5em;
+    line-height: 4.3em;
+
+    h1 {
+      color: $bg-header-color;
+      font-size: 1.7em;
+      font-weight: normal;
+    }
+  }
+}
+.allvideos {
+
+  .video {
+    width: 31.9%;
+    margin: 10px;
+    display: inline-flex;
+
+    &:nth-child(3n+3){
+      margin-right: 0;
+    }
+
+    &:nth-child(3n+1){
+      margin-left: 0;
+    }
+  }
+
+  &__more {
+    @extend .list__more;
+    width: 364px;
+    margin: 10px auto;
+  }
+}
