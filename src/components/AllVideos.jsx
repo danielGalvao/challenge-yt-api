@@ -21,6 +21,7 @@ export default class AllVideos extends Component {
 
   videoSearch(term, totalVideos) {
     YoutubeApi({term: term, maxResults: totalVideos}, (videos) => {
+			console.log(videos)
       this.setState({
         videos: videos
       })
