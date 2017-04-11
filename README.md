@@ -8,11 +8,17 @@
 ## Build do projeto
 
 1. Na pasta raiz
-2. Rode o comando: npm install
+2. Rode o comando:
+```
+$ npm install
+```
 
 ## Inicializando projeto
 
-1. Rode o comando npm run dev
+1. Rode o comando
+```
+$ npm run dev
+```
 
 ## Projeto
 
