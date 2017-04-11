@@ -15,7 +15,7 @@ const VideoDetail = ({selectedVideo}) =>  {
       </div>
     )
 	}
-
+console.log(selectedVideo)
   const videoId = selectedVideo.id.videoId
   const url = `https://www.youtube.com/embed/${videoId}`
   return (
@@ -25,6 +25,10 @@ const VideoDetail = ({selectedVideo}) =>  {
       </div>
       <div className="highlight__desc">
         <span title={selectedVideo.snippet.title} className="highlight__desc__title">{selectedVideo.snippet.title}</span>
+        <div className="highlight__desc__snippets">
+          <i title="" className="highlight__desc__snippets-icon fa fa-eye"></i>
+          <i data-views="data" className="highlight__desc__snippets-icon tooltip fa fa-clock-o"></i>
+        </div>
         <p className="highlight__desc__text">{selectedVideo.snippet.description}</p>
       </div>
     </div>

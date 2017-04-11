@@ -6,6 +6,7 @@
   width: 41%;
 
   @media (max-width: $tablet) {
+    display: block;
     width: 100vw;
   }
 

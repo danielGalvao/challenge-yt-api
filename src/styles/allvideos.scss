@@ -5,6 +5,10 @@
   margin: 0 auto;
   width: $width-content;
 
+  @media (max-width: $tablet) {
+    width: 100vw;
+  }
+
   &__title {
     height: 4.5em;
     line-height: 4.3em;
@@ -19,16 +23,30 @@
 .allvideos {
 
   .video {
-    width: 31.6%;
-    margin: 10px 12px;
     display: inline-flex;
+    margin: 10px 12px;
+    width: 31.6%;
+
+    @media (max-width: $tablet) {
+      display: flex;
+      margin: .7em;
+      width: auto;
+    }
 
     &:nth-child(3n+3){
       margin-right: 0;
+
+      @media (max-width: $tablet) {
+        margin-right: .7em;
+      }
     }
 
     &:nth-child(3n+1){
       margin-left: 0;
+
+      @media (max-width: $tablet) {
+        margin-left: .7em;
+      }
     }
   }
 
@@ -36,5 +54,9 @@
     @extend .list__more;
     width: 364px;
     margin: 10px auto;
+
+    @media (max-width: $tablet) {
+      width: 90%;
+    }
   }
 }

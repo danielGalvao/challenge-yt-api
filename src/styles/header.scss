@@ -45,6 +45,10 @@
 		position: absolute;
 		right: 0;
 
+		@media (max-width: $tablet) {
+			right: 1px;
+		}
+
 		&:hover {
 			@include transition(opacity);
 			opacity: .5;
@@ -104,10 +108,18 @@
 			opacity: 1;
 			width: 290px;
 
+			@media (max-width: $tablet) {
+				width: 60%;
+			}
+
 			.header__search-input {
 				@include transition(width);
 				background:$search-dark;
 				width: 252px;
+
+				@media (max-width: $tablet) {
+					width: 80%;
+				}
 			}
 
 			.header__search-icon {

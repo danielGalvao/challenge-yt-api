@@ -7,9 +7,9 @@ import listCss from '../styles/videoList.scss'
 
 export default class VideoList extends Component {
 	constructor(props) {
-		super(props);
+		super(props)
 
-		this.state = { moreVideos: 10 };
+		this.state = { moreVideos: 10 }
   }
 
 	handleMoreVideos(moreVideos) {

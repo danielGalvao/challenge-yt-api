@@ -31,8 +31,9 @@ export default class Home extends Component {
 
   loadVideos(moreVideos) {
     var newTotal = Number(this.state.totalVideos) + Number(moreVideos);
-    this.setState({totalVideos: newTotal});
-    this.videoSearch(this.state.term, newTotal);
+    newTotal = newTotal > 50 ? 50 : newTotal
+    this.setState({totalVideos: newTotal})
+    this.videoSearch(this.state.term, newTotal)
   }
 
   render() {
