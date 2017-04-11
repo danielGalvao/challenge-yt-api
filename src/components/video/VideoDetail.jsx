@@ -15,7 +15,7 @@ const VideoDetail = ({selectedVideo}) =>  {
       </div>
     )
 	}
-console.log(selectedVideo)
+
   const videoId = selectedVideo.id.videoId
   const url = `https://www.youtube.com/embed/${videoId}`
   return (
