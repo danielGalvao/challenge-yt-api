@@ -38,7 +38,8 @@ export default class AllVideos extends Component {
 		const videoItems = this.state.videos.map((video) => {
 			return (
 				<VideoItem
-				onVideoSelect=''
+				onVideoSelect=''			
+				key={video.etag}
 				video={video}
 				/>
 			)
