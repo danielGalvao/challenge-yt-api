@@ -1,13 +1,13 @@
 import React from 'react';
-import { Router, Route, Redirect, hashHistory } from 'react-router';
+import { Route, IndexRoute } from 'react-router';
 
+import App from '../main/app';
 import Home from '../components/Home';
 import AllVideos from '../components/AllVideos';
 
-export default props => (
-  <Router history={hashHistory}>
-    <Route path="/" component={Home} />
-    <Route path='/videos' component={AllVideos} />
-    <Redirect from='*' to='/' />
-  </Router>
+export default (
+	<Route path="/" component={App}>
+		<IndexRoute component={Home} />
+		<Route path="/videos(/:q)" component={AllVideos} />
+	</Route>
 );

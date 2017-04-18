@@ -1,12 +1,10 @@
 import React from 'react'
-
-import Routes from './routes';
+// Local imports
 import Header from '../components/Header'
-import VideoHighlight from '../components/Home'
 
-export default props => (
+export default ({ children }) => (
   <main>
     <Header />
-    <Routes />
+    { children }
   </main>
 )

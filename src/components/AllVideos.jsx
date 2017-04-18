@@ -8,31 +8,36 @@ import allVideos from '../styles/allvideos.scss'
 
 export default class AllVideos extends Component {
 	constructor(props) {
-    super(props);
+		super(props);
 
-    this.state = {
-      term: '',
-      videos: [],
+		this.state = {
+			term: props.params.q || '',
+			videos: [],
 			totalVideos: 20
-    };
+		};
 
-    this.videoSearch(this.state.term, this.state.totalVideos)
-  }
+		this.videoSearch(this.state.term, this.state.totalVideos)
+	}
 
-  videoSearch(term, totalVideos) {
-    YoutubeApi({term: term, maxResults: totalVideos}, (videos) => {
-      this.setState({
-        videos: videos
-      })
-    })
-  }
+	componentWillReceiveProps(props) {
+		if (props.params.q !== this.props.params.q)
+			this.videoSearch(props.params.q, this.state.totalVideos)
+	}
+
+	videoSearch(term, totalVideos) {
+		YoutubeApi({term: term, maxResults: totalVideos}, (videos) => {
+			this.setState({
+				videos: videos
+			})
+		})
+	}
 
 	loadVideos(moreVideos) {
-    var newTotal = Number(this.state.totalVideos) + Number(moreVideos)
+		var newTotal = Number(this.state.totalVideos) + Number(moreVideos)
 		newTotal = newTotal > 50 ? 50 : newTotal
-    this.setState({totalVideos: newTotal})
-    this.videoSearch(this.state.term, newTotal)
-  }
+		this.setState({totalVideos: newTotal})
+		this.videoSearch(this.state.term, newTotal)
+	}
 
 	render() {
 		const videoItems = this.state.videos.map((video) => {

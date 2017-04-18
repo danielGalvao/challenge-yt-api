@@ -1,2 +1,4 @@
 node_modules
+public/*.png
+public/app.js
 *.log

@@ -21,7 +21,7 @@ const VideoDetail = ({selectedVideo}) =>  {
   return (
     <div>
       <div className="highlight__video">
-        <iframe width="560" height="310" src={url} frameborder="0" allowfullscreen></iframe>
+        <iframe width="560" height="310" src={url} frameBorder="0" allowFullScreen></iframe>
       </div>
       <div className="highlight__desc">
         <span title={selectedVideo.snippet.title} className="highlight__desc__title">{selectedVideo.snippet.title}</span>
