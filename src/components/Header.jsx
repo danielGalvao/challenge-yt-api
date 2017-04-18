@@ -11,7 +11,7 @@ export default class Header extends Component {
 		this.toggleSearchBar = this.toggleSearchBar.bind(this);
 		this.handleSearch = this.handleSearch.bind(this);
 		this.state = {
-			activeSearch: false
+			activeSearch: false,
 		};
 	}
 

@@ -40,10 +40,12 @@ export default class AllVideos extends Component {
 	}
 
 	render() {
+		const videosLength = this.state.videos.length
+		let loadMore = videosLength < 20 || videosLength == 50 ? "allvideos__more disable" : "allvideos__more"
 		const videoItems = this.state.videos.map((video) => {
 			return (
 				<VideoItem
-				onVideoSelect=''			
+				onVideoSelect=''
 				key={video.etag}
 				video={video}
 				/>
@@ -59,7 +61,7 @@ export default class AllVideos extends Component {
 					<ul>
 						{videoItems}
 					</ul>
-					<span onClick={event => this.loadVideos(this.state.totalVideos)} className="allvideos__more">carregar mais vídeos...</span>
+					<span onClick={event => this.loadVideos(this.state.totalVideos)} className={loadMore}>carregar mais vídeos...</span>
 				</div>
 			</div>
 		)

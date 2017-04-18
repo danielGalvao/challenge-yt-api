@@ -36,7 +36,7 @@ export default class VideoList extends Component {
 					<ul>
 						{videos}
 					</ul>
-					<span onClick={event => this.handleMoreVideos(this.state.moreVideos)} className="list__more">carregar mais vídeos...</span>
+					<span onClick={event => this.handleMoreVideos(this.state.moreVideos)} className={this.props.classBtn}>carregar mais vídeos...</span>
 				</div>
 			</div>
 		)

@@ -37,6 +37,7 @@ export default class Home extends Component {
   }
 
   render() {
+    let loadMore = this.state.totalVideos < 4 || this.state.totalVideos == 50 ? "list__more disable" : "list__more"
 		return (
       <div className="container">
         <VideoHighlight selectedVideo={this.state.selectedVideo} />
@@ -44,6 +45,7 @@ export default class Home extends Component {
           videos={this.state.videos}
           videoSelect={selectedVideo => this.setState({selectedVideo})}
           moreVideos={moreVideos => this.loadVideos(moreVideos)}
+          classBtn={loadMore}
         />
       </div>
     )

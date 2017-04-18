@@ -50,5 +50,9 @@
       color: $main;
       transition: all .2s ease-in-out;
     }
+
+    &.disable {
+      visibility: hidden;
+    }
   }
 }
