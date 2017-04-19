@@ -26,11 +26,10 @@ $ npm run dev
 
 ### TODO
 
-- Devido a falta de tempo não implementei o redux para facilitar implementar e a funcionar o filtro pelo input (comunicação entre os componentes)
-- Tooltip com informações de views e data do vídeo
+- Tooltip com informações de quantidade de views e data do vídeo
 - implementar ux com os botões de carregar mais videos para usar o component loading
-- Adicionar tempo dos vídeos no canto inferior da imagem do vídeo
-- Popup com video selecionado na página de todos os vídeos
+- Adicionar tempo dos videos no canto inferior da imagem do vídeo
+- Popup com vídeo selecionado
 
 ### Stack
 - React
