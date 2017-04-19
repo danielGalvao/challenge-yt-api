@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { hashHistory, Link } from 'react-router';
+import { hashHistory, Link } from 'react-router'
 // Local imports
 import headerStyle from '../styles/header.scss'
 import menuStyle from '../styles/menu.scss'
@@ -8,19 +8,19 @@ import logoHeader from '../assets/images/logo.png'
 export default class Header extends Component {
 	constructor(props){
 		super(props);
-		this.toggleSearchBar = this.toggleSearchBar.bind(this);
-		this.handleSearch = this.handleSearch.bind(this);
+		this.toggleSearchBar = this.toggleSearchBar.bind(this)
+		this.handleSearch = this.handleSearch.bind(this)
 		this.state = {
-			activeSearch: false,
+			activeSearch: false
 		};
 	}
 
-	handleSearch(q) {
-		hashHistory.push(`/videos/${q}`)
+	handleSearch(query) {
+		hashHistory.push(`/videos/${query}`)
 	}
 
 	toggleSearchBar() {
-		const currentState = this.state.activeSearch;
+		const currentState = this.state.activeSearch
 		this.setState( { activeSearch : !currentState } )
 	}
 
@@ -34,7 +34,7 @@ export default class Header extends Component {
 					<div className="header__brand">
 						<img src={logoHeader} alt="Fictícia Vídeos" title="Fictícia Vídeos" className="header__logo" />
 					</div>
-					<form className={classNameSearch} title="Pesquisar" onSubmit={(e) => this.handleSearch(e.target.q.value)} >
+					<form className={classNameSearch} title="Pesquisar" onSubmit={event => this.handleSearch(event.target.q.value)} >
 						<input type="text" name="q" className="header__search-input" />
 						<i className={classNameSearchIcon} onClick={this.toggleSearchBar}></i>
 					</form>

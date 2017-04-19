@@ -42,6 +42,7 @@ export default class AllVideos extends Component {
 	render() {
 		const videosLength = this.state.videos.length
 		let loadMore = videosLength < 20 || videosLength == 50 ? "allvideos__more disable" : "allvideos__more"
+		let titleVideos = this.props.params.q == '' ? "Todos os vídeos do Canal" : `Resultados para: "${this.props.params.q}"`
 		const videoItems = this.state.videos.map((video) => {
 			return (
 				<VideoItem
@@ -55,7 +56,7 @@ export default class AllVideos extends Component {
 		return (
 			<div className="container_allvideos">
 				<div className="container_allvideos__title">
-					<h1>Todos os vídeos do Canal</h1>
+					<h1>{titleVideos}</h1>
 				</div>
 				<div className="allvideos">
 					<ul>

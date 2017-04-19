@@ -33,3 +33,14 @@ main {
 iframe {
 	border: none;
 }
+@-webkit-keyframes autofill {
+    to {
+        color: $main;
+        background: transparent;
+    }
+}
+
+input:-webkit-autofill {
+    -webkit-animation-name: autofill;
+    -webkit-animation-fill-mode: both;
+}
